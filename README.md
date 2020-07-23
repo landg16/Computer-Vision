@@ -7,10 +7,10 @@ First of all, I prepared data for training. I prepared data to detect color, cat
 After this I filtered car images, which showed only exterior of cars and splitted data into training, validation and test.
 
 # Modelling
-I chose RESNET 18, which has 11M parameters. I used it because learning from a scratch is a big headache.
+I chose ResNet-18, which has 11M parameters. ResNet-18 is a convolutional neural network that is 18 layers deep. You can load a pretrained version of the network trained on more than a million images. The pretrained network can classify images into 1000 object categories, such as keyboard, mouse, pencil, and etc. As a result, the network has learned rich feature representations for a wide range of images. I used it because learning from a scratch is a big headache. 
 
 # Training
-Because of huge amounts of data, I chose Google's colab and made my life easier. There is Generate_Car_Data.ipynb file, from where I generated train data.
+Because of huge amounts of data, I chose Google's colab and made my life easier. There is Generate_Car_Data.ipynb file, from where I generated train data. I had to resize image to 224x224, because ResNet-18 only takes this resolution.
 
 ### Color Training
 For color training, I only chose 7 colors out of 16, because data was not enough for the other 9 colors and the model could not learn this. To sum up I chose 105K data for color training.
