@@ -2,21 +2,25 @@
 This repository is only for studying and has low results. (Trust me, don't use this :D )
 
 # Preparation
-Firstly, i started to prepare data for train. I prepared data for color, category and doors number detection. For this i needed only outside of car, so i used [rovehicle_counting_tensorflowot](https://github.com/ahmetozlu/vehicle_counting_tensorflow) and modified it little bit to only detect cars.
+First of all, I prepared data for training. I prepared data to detect color, category and number of doors. To do this I only needed exterior of a car, so I used [vehicle_counting_tensorflow](https://github.com/ahmetozlu/vehicle_counting_tensorflow) and  modified it a little in order to only detect cars.
 
-Then i filtered car images, where only car outside visual are shown and splitted data into train, validation and test.
+After this I filtered car images, which showed only exterior of cars and splitted data into training, validation and test.
 
 # Modelling
-I chose RESNET 18, it has 11M parameters. Also learning from scratch is a big headache, so that's it.
+I chose RESNET 18, which has 11M parameters. I used it because learning from a scratch is a big headache.
 
 # Training
-Because of huge amount's of data, i chose Google's colab, to make my life easier. There is Generate_Car_Data.ipynb file, where i generated train data.
+Because of huge amounts of data, I chose Google's colab and made my life easier. There is Generate_Car_Data.ipynb file, from where I generated train data.
+
 ### Color Training
-For color training, i chose only 7 color out of 16, because 9 color's data was too few for training. I chose 105K data for colors.
+For color training, I only chose 7 colors out of 16, because data was not enough for the other 9 colors and the model could not learn this. To sum up I chose 105K data for color training.
 ### Category Training
-For category training, i chose 4 category out of 11, because 7 categories data was too few, while Sedan was 125K, Limousine was 55, so there was no way for model to learn anything about Limousines. I chose 50K data for that.
-### Doors Training
-For door training, i chose all doors, even tho >5 was only 1286, there was only 3 option, so i picked 9350 from 2/3 and 24400 from 4/5.
+For category training, I only chose 4 categories out of 11, because data was not enough for the other 7 categories. For example, while Sedan was 125K, Limousine was only 55, so there was no way for model to learn anything about Limousines. I chose 50K data for category training. 
+
+### Door Training
+For door training, I chose every door in the data, even though >5 was only 1286, there was only 3 options, so I picked 9350 from 2/3 and 24400 from 4/5.
 
 # Result
-I have 3 IPYNB file, Evaluation_Doors, Evaluation_Colors, Evaluation_Categories. There are results and how i got them.
+I have 3 IPYNB files, Evaluation_Doors, Evaluation_Colors, Evaluation_Categories. These are the results and how I got them.
+
+#### GNU <3
